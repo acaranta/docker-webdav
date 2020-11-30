@@ -26,7 +26,7 @@ docker run --restart always -v /srv/dav:/var/lib/dav \
 version: '3'
 services:
   webdav:
-    image: acaranta/webdav
+    image: acaranta/docker-webdav
     restart: always
     ports:
       - "80:80"
@@ -47,7 +47,7 @@ If you're happy with a self-signed SSL certificate, specify `-e SSL_CERT=selfsig
 ```
 docker run --restart always -v /srv/dav:/var/lib/dav \
     -e AUTH_TYPE=Basic -e USERNAME=test -e PASSWORD=test \
-    -e SSL_CERT=selfsigned --publish 443:443 -d acaranta/webdav
+    -e SSL_CERT=selfsigned --publish 443:443 -d acaranta/docker-webdav
 
 ```
 
